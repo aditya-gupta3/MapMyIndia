@@ -1,0 +1,7 @@
+<form action="{% url 'depositclaim:deposit' %}" method="post">
+    {% csrf_token %}
+    <h1> Thanks for your Service </h1>
+    {{ form.as_ul }}
+    <br>
+    <input type="submit" value="Submit" />
+</form>
