@@ -3,6 +3,11 @@
     Created on : Jul 6, 2015, 8:03:43 AM
     Author     : agupta
 --%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import= "java.sql.Connection" %>
+<%@page import= "java.sql.*" %>
+<%--<%@page import= "java.sql.util.*" %>--%>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 
 
@@ -18,7 +23,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<b>Print value defined in set tag :</b> <s:property value="#from" /> <br/>
  <%
 String to = "mapmyindia123@gmail.com";
 int abc = 123;
@@ -34,11 +38,37 @@ else{
     out.println(" Mail NOT Sent to "+to);
 }  
 %>
-<sql:update var="Material" dataSource="jdbc/IFPWAFCAD">
-    INSERT INTO Material (Id1, Part, Product, Type, Uses)
-    VALUES (abc, '123','to','Type','Use');
-</sql:update>
+<%
+ String tto = (String)request.getParameter("product");
+    System.out.print(tto);
+%>
+<%--<sql:update var="Material" dataSource="jdbc/IFPWAFCAD">
+<!--    INSERT INTO Material (Id1, Part, Product, Type, Uses)
+    VALUES ('abc', '123','to','Type','Use');-->
 
+
+</sql:update>--%>
+ <%
+    String sql = "INSERT INTO Material(Id1, Part, Product, Type, Uses)"  +
+                    "VALUES (?, ?,?,?,?)";
+    Connection conn = null;
+    String DB_URL = "jdbc:mysql://localhost:3306/MyNewDatabase";
+    
+    String USER = "root";
+    String PASS = "user";
+    conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+    PreparedStatement preparedStatement = conn.prepareStatement(sql);
+    preparedStatement.setInt(1, 122);
+    preparedStatement.setInt(2, 234);
+    preparedStatement.setString(3, tto);
+    preparedStatement.setString(4, "Test");
+    preparedStatement.setString(5, "Tests");
+
+
+    preparedStatement.executeUpdate(); 
+
+%>
     
 <html>
     <head>
