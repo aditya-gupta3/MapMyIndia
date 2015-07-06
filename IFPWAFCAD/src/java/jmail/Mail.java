@@ -22,7 +22,7 @@ public class Mail {
 //        sendMail = sendMail();
 //        System.out.println(sendMail);
 //        }
-    private String Part;
+    private int part;
     private String product;
     private String from;
     private String type;
@@ -35,13 +35,14 @@ public class Mail {
     /**
      * @return the Part
      */
-    public String getPart() {
-        return Part;
+    public int getPart() {
+        return part;
     }
+    public void setPart(int part) {
+        this.part = part;
+    }
+
     String email = "mapmyindia123.gmail.com";
-    public void setPart(String Part) {
-        this.Part = Part;
-    }
     public void setto(String email) {
         this.email = to;
     }
@@ -125,22 +126,33 @@ public class Mail {
         try
         {
             Properties props = System.getProperties();
+            
+            //System.out.println("From in Send Main -> " + from);
               // -- Attaching to default Session, or we could start a new one --
-              props.put("mail.transport.protocol", "smtp" );
-              System.out.println(Part);
-              props.put("mail.smtp.starttls.enable","true" );
-              props.put("mail.smtp.host",smtpServ);
-              props.put("mail.smtp.auth", "true" );
+//              props.put("mail.transport.protocol", "smtp" );
+//              System.out.println("hello----> "+ Part +" " +from);
+//              props.put("mail.smtp.starttls.enable","true" );
+//              props.put("mail.smtp.host","smtp.gmail.com");
+//              props.put("mail.smtp.port", "587");
+//              props.put("mail.smtp.auth", "true" );
+              
+              
+              props.put("mail.smtp.host", "smtp.gmail.com");
+              props.put("mail.smtp.socketFactory.port", "465");
+              props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+              props.put("mail.smtp.auth", "true");
+              props.put("mail.smtp.port", "465");
+              
               Authenticator auth = new SMTPAuthenticator();
               Session session = Session.getInstance(props, auth);
               // -- Create a new message --
               Message msg = new MimeMessage(session);
               // -- Set the FROM and TO fields --
-              msg.setFrom(new InternetAddress(from));
+              msg.setFrom(new InternetAddress("mapmyindia123@gmail.com"));
               
-              msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to, false));
+              msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse("mapmyindia123@gmail.com", false));
               msg.setSubject("New Order by Mr Abhinay");
-              msg.setText("Here are the details of the order" + Part + product + type + use);
+              msg.setText("Here are the details of the order \n The part number is " + part + "The product number is " + product + "The type is " + type + "The use is " +  use);
               // -- Set some other header information --
               msg.setHeader("MyMail", "Mr. XYZ" );
               msg.setSentDate(new Date());

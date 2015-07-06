@@ -18,7 +18,7 @@
 
     
         <form action="sendmail.jsp" method="POST">
-            <p>Part Number </p><input type="text" name="part" value="" />
+            <p>Part Number </p><input type="number" name="part" value="" />
             <p>Product Name </p><input type="text" name="product" value="" />
             <p>Trade/Raw/Spares </p><input type="text" name="type" value="" />
             <p>Local/Import </p><input type="text" name="use" value="" />
