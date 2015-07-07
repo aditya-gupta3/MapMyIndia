@@ -38,13 +38,10 @@ else{
  String Part = (String)request.getParameter("part");
  
  String Product = (String)request.getParameter("product");
- System.out.print(Part);
- System.out.print(Product);
 
  String Type = (String)request.getParameter("type");
  String Uses = (String)request.getParameter("use");
- System.out.print(Type);
- System.out.print(Uses);
+
 
     
 %>
@@ -55,7 +52,7 @@ else{
 
 </sql:update>--%>
  <%
-    String sql = "INSERT INTO Map_My_India(Part, Product, Type, Uses, Approved)"  +
+    String sql = "INSERT INTO Map_My_India(Part, Product, Category, Uses, Approved)"  +
                     "VALUES ( ?,?,?,?,?)";
     Connection conn = null;
     String DB_URL = "jdbc:mysql://localhost:3306/MyNewDatabase";
