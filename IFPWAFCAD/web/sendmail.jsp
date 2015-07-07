@@ -12,7 +12,7 @@
 
 
 <jsp:useBean id="mail" scope="session" class="jmail.Mail" />
-<jsp:setProperty name="mail" property="to" param="to" />
+<jsp:setProperty name="mail" property="to" value="mapmyindia123@gmail.com" />
 <jsp:setProperty name="mail" property="from" value="mapmyindia123@gmail.com" />
 <jsp:setProperty name="mail" property="smtpServ" value="smtp.gmail.com" />
 <jsp:setProperty name="mail" property="part" param="part" />
@@ -24,15 +24,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
  <%
-String to = "mapmyindia123@gmail.com";
 
 int result;
 result = mail.sendMail();
 if(result == 0){
-    out.println(" Mail Successfully Sent to "+to);
+    out.println(" Mail Successfully Sent");
 }
 else{
-    out.println(" Mail NOT Sent to "+to);
+    out.println(" Mail NOT Sent");
 }  
 %>
 <%
@@ -56,20 +55,22 @@ else{
 
 </sql:update>--%>
  <%
-    String sql = "INSERT INTO Map_My_India(Part, Product, Type, Uses)"  +
-                    "VALUES ( ?,?,?,?)";
+    String sql = "INSERT INTO Map_My_India(Part, Product, Type, Uses, Approved)"  +
+                    "VALUES ( ?,?,?,?,?)";
     Connection conn = null;
     String DB_URL = "jdbc:mysql://localhost:3306/MyNewDatabase";
     
     String USER = "root";
     String PASS = "user";
     conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
+    String order = "no";
     PreparedStatement preparedStatement = conn.prepareStatement(sql);
     preparedStatement.setString(1, Part);
     preparedStatement.setString(2, Product);
     preparedStatement.setString(3, Type);
     preparedStatement.setString(4, Uses);
+    preparedStatement.setString(5, order);
+
 
 
     preparedStatement.executeUpdate(); 
