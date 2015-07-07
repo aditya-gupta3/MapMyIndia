@@ -25,10 +25,7 @@
 <!DOCTYPE html>
  <%
 String to = "mapmyindia123@gmail.com";
-int abc = 123;
 
-//<jsp:getProperty property="name" name="u"/>;
-System.out.println("To "+ to) ;
 int result;
 result = mail.sendMail();
 if(result == 0){
@@ -39,8 +36,18 @@ else{
 }  
 %>
 <%
- String tto = (String)request.getParameter("product");
-    System.out.print(tto);
+ String Part = (String)request.getParameter("part");
+ 
+ String Product = (String)request.getParameter("product");
+ System.out.print(Part);
+ System.out.print(Product);
+
+ String Type = (String)request.getParameter("type");
+ String Uses = (String)request.getParameter("use");
+ System.out.print(Type);
+ System.out.print(Uses);
+
+    
 %>
 <%--<sql:update var="Material" dataSource="jdbc/IFPWAFCAD">
 <!--    INSERT INTO Material (Id1, Part, Product, Type, Uses)
@@ -49,8 +56,8 @@ else{
 
 </sql:update>--%>
  <%
-    String sql = "INSERT INTO Material(Id1, Part, Product, Type, Uses)"  +
-                    "VALUES (?, ?,?,?,?)";
+    String sql = "INSERT INTO Map_My_India(Part, Product, Type, Uses)"  +
+                    "VALUES ( ?,?,?,?)";
     Connection conn = null;
     String DB_URL = "jdbc:mysql://localhost:3306/MyNewDatabase";
     
@@ -59,11 +66,10 @@ else{
     conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
     PreparedStatement preparedStatement = conn.prepareStatement(sql);
-    preparedStatement.setInt(1, 122);
-    preparedStatement.setInt(2, 234);
-    preparedStatement.setString(3, tto);
-    preparedStatement.setString(4, "Test");
-    preparedStatement.setString(5, "Tests");
+    preparedStatement.setString(1, Part);
+    preparedStatement.setString(2, Product);
+    preparedStatement.setString(3, Type);
+    preparedStatement.setString(4, Uses);
 
 
     preparedStatement.executeUpdate(); 

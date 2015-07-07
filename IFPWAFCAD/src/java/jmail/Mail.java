@@ -22,7 +22,7 @@ public class Mail {
 //        sendMail = sendMail();
 //        System.out.println(sendMail);
 //        }
-    private int part;
+    private String part;
     private String product;
     private String from;
     private String type;
@@ -35,10 +35,10 @@ public class Mail {
     /**
      * @return the Part
      */
-    public int getPart() {
+    public String getPart() {
         return part;
     }
-    public void setPart(int part) {
+    public void setPart(String part) {
         this.part = part;
     }
 
