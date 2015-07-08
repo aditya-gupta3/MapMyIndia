@@ -30,6 +30,7 @@ public class Mail {
     private String password;
     private String smtpServ;
     private String to;
+    private String quantity;
     
 
     /**
@@ -42,6 +43,8 @@ public class Mail {
         this.part = part;
     }
 
+    
+    
     String email = "mapmyindia123.gmail.com";
     public void setto(String email) {
         this.email = to;
@@ -116,7 +119,20 @@ public class Mail {
         return smtpServ;
     }
     
+    public String getQuantity() {
+        return quantity;
+    }
+
     /**
+     * @param quantity the quantity to set
+     */
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
+    }
+    
+    /**
+     * 
+     
      * @param smtpServ the smtpServ to set
      */
     public void setSmtpServ(String smtpServ) {
@@ -152,7 +168,7 @@ public class Mail {
               
               msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse("mapmyindia123@gmail.com", false));
               msg.setSubject("New Order by Mr Abhinay");
-              msg.setText("Here are the details of the order \n The part number is " + part + "The product number is " + product + "The type is " + type + "The use is " +  use);
+              msg.setText("Here are the details of the order" + "\n" + "The part number is " + part + "\n" + "The product number is " + product + "\n" +"The type is " + type + "\n" + "The use is " +  use + "\n" + " The Quantity is " + quantity);
               // -- Set some other header information --
               msg.setHeader("MyMail", "Mr. XYZ" );
               msg.setSentDate(new Date());
@@ -167,6 +183,11 @@ public class Mail {
           return -1;
         }
   }
+
+    /**
+     * @return the quantity
+     */
+    
 
     // Also include an inner class that is used for authentication purposes
 

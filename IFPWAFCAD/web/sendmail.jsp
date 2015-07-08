@@ -16,6 +16,7 @@
 <jsp:setProperty name="mail" property="from" value="mapmyindia123@gmail.com" />
 <jsp:setProperty name="mail" property="smtpServ" value="smtp.gmail.com" />
 <jsp:setProperty name="mail" property="part" param="part" />
+<jsp:setProperty name="mail" property="quantity" param="quantity" />
 <jsp:setProperty name="mail" property="product" param="product" />
 <jsp:setProperty name="mail" property="type" param="type" />
 <jsp:setProperty name="mail" property="use" param="use" />
@@ -41,6 +42,7 @@ else{
 
  String Type = (String)request.getParameter("type");
  String Uses = (String)request.getParameter("use");
+ String Quantity = (String)request.getParameter("quantity");
 
 
     
@@ -52,8 +54,8 @@ else{
 
 </sql:update>--%>
  <%
-    String sql = "INSERT INTO Map_My_India(Part, Product, Category, Uses, Approved)"  +
-                    "VALUES ( ?,?,?,?,?)";
+    String sql = "INSERT INTO Map_My_India(Part, Product, Category, Uses, Quantity, Approved)"  +
+                    "VALUES ( ?,?,?,?,?,?)";
     Connection conn = null;
     String DB_URL = "jdbc:mysql://localhost:3306/MyNewDatabase";
     
@@ -66,11 +68,13 @@ else{
     preparedStatement.setString(2, Product);
     preparedStatement.setString(3, Type);
     preparedStatement.setString(4, Uses);
-    preparedStatement.setString(5, order);
+    preparedStatement.setString(5, Quantity);
+    preparedStatement.setString(6, order);
 
 
 
     preparedStatement.executeUpdate(); 
+    preparedStatement.close();
 
 %>
     

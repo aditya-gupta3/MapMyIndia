@@ -18,18 +18,14 @@
 
     
         <form action="sendmail.jsp" method="POST">
-            <p>Part Number </p><input type="text" name="part" value="" />
-            <p>Product Name </p><input type="text" name="product" value="" />
-            <p>Trade/Raw/Spares </p><input type="text" name="type" value="" />
-            <p>Local/Import </p><input type="text" name="use" value="" />
+            <p> Part Number </p><input type="text" name="part" value="" />
+            <p> Product Name </p><input type="text" name="product" value="" />
+            <p> Trade/Raw/Spares </p><input type="text" name="type" value="" />
+            <p> Local/Import </p><input type="text" name="use" value="" />
+            <p> Quantity </p><input type="text" name="quantity" value="" />
             <br>
             <br>
             <input type="submit" value="submit" name="submit" />
         </form>
-
-    </tr>
-</tbody>
-</table>
-
-</body>
+    </body>
 </html>

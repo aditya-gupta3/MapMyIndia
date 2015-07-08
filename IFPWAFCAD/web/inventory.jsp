@@ -21,7 +21,7 @@
             String Approve1 = (String)request.getParameter("approve1");
 
 
-            String sql = ("UPDATE Map_My_India SET Approved = ? WHERE Part = ? AND Product = ? AND Category = ? AND Uses = ?");
+            String sql = ("UPDATE Map_My_India SET Approved = ? WHERE Part = ? AND Product = ? AND Uses = ?");
 //            AND Product = ? AND Type = ? AND USES = ?
             Connection conn = null;
             String DB_URL = "jdbc:mysql://localhost:3306/MyNewDatabase";
@@ -31,12 +31,16 @@
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             
-            System.out.print(abc);
-            preparedStatement.setString(1, "Comeee on!");
+            preparedStatement.setString(1, "Approved");
             preparedStatement.setString(2, Part1);
             preparedStatement.setString(3, Product1);
-            preparedStatement.setString(4,"Test1233");
-            preparedStatement.setString(5, Uses1);
+//            preparedStatement.setString(4,"Test1233");
+            preparedStatement.setString(4, Uses1);
+            System.out.print(Part1);
+            System.out.print(Product1);
+            System.out.print(Uses1);
+           
+            System.out.print("Testing");
 //            
 
             
@@ -60,14 +64,53 @@
 
 %>
             
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Inventory</title>
-    </head>
+
+ <% 
+            Connection conne = null;
+
+            conne = DriverManager.getConnection(DB_URL, USER, PASS);
+            Statement statement = conne.createStatement() ;
+            ResultSet resultset = statement.executeQuery("select * from Map_My_India Where Approved ='Approved' ") ; 
+
+
+%>
+            
+            
+            
+<HTML>
     <body>
-        <h1>This is the inventory</h1>
-    </body>
-</html>
+    <h1> The Inventory is as follows: </h1>
+    <br>
+    <br>
+        <TABLE BORDER="1">
+            <TR>
+                <TH>Part Number</TH>
+                <TH>Product</TH>
+                <TH>Type</TH>
+                <TH>Use</TH>
+                <TH>Quantity of Product </TH>
+                <TH>Approval Status</TH>
+                <TH>Date and Time Order was Passed</TH>
+                
+            </TR>
+            <% while(resultset.next()){ %>
+            <TR>
+                    <TD> <%= resultset.getString(1) %> </td>
+                    <TD><%= resultset.getString(2) %></TD>
+                    <TD><%= resultset.getString(3) %></TD>
+                    <TD><%= resultset.getString(4) %></TD>
+                    <TD><%= resultset.getString(5) %></TD>
+                    <TD><%= resultset.getString(6) %></TD>
+                    <TD><%= resultset.getString(7) %></TD>
+
+            </TR>
+            <% } %>
+        </TABLE>
+        <br>
+        <br>
+        <br>
+        <form name="Import_Excel" action="test.jsp" method="POST">
+            <input type="submit" value="Import in Excel" name="Excel.import" />
+        </form>
+    </BODY>
+</HTML>
