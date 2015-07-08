@@ -12,7 +12,7 @@
 
 
 <jsp:useBean id="mail" scope="session" class="jmail.Mail" />
-<jsp:setProperty name="mail" property="to" value="mapmyindia123@gmail.com" />
+<jsp:setProperty name="mail" property="to" value="bsingh@mapmyindia.com" />
 <jsp:setProperty name="mail" property="from" value="mapmyindia123@gmail.com" />
 <jsp:setProperty name="mail" property="smtpServ" value="smtp.gmail.com" />
 <jsp:setProperty name="mail" property="part" param="part" />

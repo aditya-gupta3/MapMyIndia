@@ -19,9 +19,10 @@
             String abc = (String)request.getParameter("type1");
             String Uses1 = (String)request.getParameter("use1");
             String Approve1 = (String)request.getParameter("approve1");
+            String Time = (String)request.getParameter("quantity1");
 
 
-            String sql = ("UPDATE Map_My_India SET Approved = ? WHERE Part = ? AND Product = ? AND Uses = ?");
+            String sql = ("UPDATE Map_My_India SET Approved = ? WHERE Part = ? AND Product = ? AND Uses = ? AND TIME = ? LIMIT 1");
 //            AND Product = ? AND Type = ? AND USES = ?
             Connection conn = null;
             String DB_URL = "jdbc:mysql://localhost:3306/MyNewDatabase";
@@ -36,21 +37,14 @@
             preparedStatement.setString(3, Product1);
 //            preparedStatement.setString(4,"Test1233");
             preparedStatement.setString(4, Uses1);
-            System.out.print(Part1);
-            System.out.print(Product1);
-            System.out.print(Uses1);
-           
-            System.out.print("Testing");
-//            
+            preparedStatement.setString(5, Time);
+
 
             
             
-//            preparedStatement.executeUpdate(); 
-//            preparedStatement.close();
-//            conn.close();
+
             
             try{
-                System.out.print("Testing");
                 preparedStatement.executeUpdate();
                 preparedStatement.close();
              }
@@ -71,6 +65,7 @@
             conne = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = conne.createStatement() ;
             ResultSet resultset = statement.executeQuery("select * from Map_My_India Where Approved ='Approved' ") ; 
+
 
 
 %>

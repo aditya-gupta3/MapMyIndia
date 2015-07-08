@@ -45,7 +45,7 @@ public class Mail {
 
     
     
-    String email = "mapmyindia123.gmail.com";
+    String email = "bsingh@mapmyindia.com";
     public void setto(String email) {
         this.email = to;
     }
@@ -166,9 +166,9 @@ public class Mail {
               // -- Set the FROM and TO fields --
               msg.setFrom(new InternetAddress("mapmyindia123@gmail.com"));
               
-              msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse("mapmyindia123@gmail.com", false));
+              msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse("bsingh@mapmyindia.com", false));
               msg.setSubject("New Order by Mr Abhinay");
-              msg.setText("Here are the details of the order" + "\n" + "The part number is " + part + "\n" + "The product number is " + product + "\n" +"The type is " + type + "\n" + "The use is " +  use + "\n" + " The Quantity is " + quantity);
+              msg.setText("Here are the details of the order" + "\n" + "The part number is " + part + "\n" + "The product number is " + product + "\n" +"The type is " + type + "\n" + "The use is " +  use + "\n" + " The Quantity is " + quantity+ ". \n");
               // -- Set some other header information --
               msg.setHeader("MyMail", "Mr. XYZ" );
               msg.setSentDate(new Date());

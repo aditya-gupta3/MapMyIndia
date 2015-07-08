@@ -85,7 +85,7 @@
                             <input type="hidden" name="product2" value="<%= resultset.getString(2) %>"/>
                             <input type="hidden" name="type2" value="<%= resultset.getString(3) %>"/>
                             <input type="hidden" name="use2" value="<%= resultset.getString(4) %>"/>
-                            <input type="hidden" name="quantity2" value="<%= resultset.getString(7) %>"/>
+                            <input type="hidden" name="quantity2" value="<%= resultset.getString(5) %>"/>
                             <input type="hidden" name="time2" value="<%= resultset.getString(6) %>"/>
                             <input type="submit" value="Reject" name="reject" />
                         </form>

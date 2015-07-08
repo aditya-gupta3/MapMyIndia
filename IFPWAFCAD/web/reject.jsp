@@ -28,7 +28,7 @@
             <table>
                 <tr><td><b><font color="red">To:
                     </td>
-                    <td><b><b><input type="text" name="mail" value="mapmyindia123@gmail.com" readonly/><br/>
+                    <td><b><b><input type="text" name="mail" value="abhinay@mapmyindia.com" readonly/><br/>
                     </td>
                 </tr>
                 <tr>
@@ -45,7 +45,7 @@
                     </td>
                     <td>
                         <textarea rows="12" cols="80" name="mess">
-                    The part number was <%=Part%>. The Product name was <%=Product%>. The category was <%=Uses%>. The quantity was <%=Quantity%>
+                    The part number was <%=Part%>. The Product name was <%=Product%>. The category was <%=Uses%>. The quantity was <%=Quantity%>. 
                         </textarea><br/>
                     </td>
                 </tr>
