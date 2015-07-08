@@ -18,7 +18,7 @@
 
 <HTML>
     <HEAD>
-        <TITLE>The tableName Database Table </TITLE>
+        <TITLE> Map My India </TITLE>
     </HEAD>
 
     <BODY>

@@ -82,6 +82,19 @@
     <h1> The Inventory is as follows: </h1>
     <br>
     <br>
+    <b> Product Name </b>
+    <form name="subinventory" action="subinventory.jsp" method="POST">
+    <select name="productname">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option>D</option>
+        <option>X</option> 
+        <input type="submit" value="submit" />
+    </select>
+    </form>
+
+
         <TABLE BORDER="1">
             <TR>
                 <TH>Part Number</TH>
