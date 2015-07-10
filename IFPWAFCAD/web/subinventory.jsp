@@ -8,11 +8,7 @@
 <%--<%@page import= "java.sql.util.*" %>--%>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 
-<CENTER>
-<FORM>
-<input type="button" value="Enter Protected Area" onClick="passWord()">
-</FORM>
-</CENTER>
+
  <%         String productname = (String)request.getParameter("productname");
             String productcategory = (String)request.getParameter("productcategory");
             String productuse = (String)request.getParameter("productuse");
@@ -82,7 +78,7 @@ System.out.println(total_before);
             <TR>
                 <TH>Part Number</TH>
                 <TH>Product</TH>
-                <TH>Type</TH>
+                <TH>Category</TH>
                 <TH>Use</TH>
                 <TH>Quantity of Product </TH>
                 <TH>Faulty Quantity</TH>

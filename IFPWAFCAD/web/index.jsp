@@ -22,6 +22,7 @@
             <p> Product Name </p><input type="text" name="product" value="" />
             <p> Trade/Raw/Spares </p><input type="text" name="type" value="" />
             <p> Local/Import </p><input type="text" name="use" value="" />
+            <p> Status </p><input type="text" name="status" value="" />
             <p> Quantity </p><input type="text" name="quantity" value="" />
             <br>
             <br>
