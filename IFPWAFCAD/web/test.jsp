@@ -33,6 +33,7 @@
                         rowhead.createCell((short) 1).setCellValue("Product Name");
                         rowhead.createCell((short) 2).setCellValue("Category");
                         rowhead.createCell((short) 3).setCellValue("Uses");
+                         rowhead.createCell((short) 3).setCellValue("Status");
                         rowhead.createCell((short) 4).setCellValue("Quantity");
                         rowhead.createCell((short) 5).setCellValue("Time order was Passed");
 
@@ -47,7 +48,8 @@
                                 row.createCell((short) 2).setCellValue(rs.getString(3));
                                 row.createCell((short) 3).setCellValue(rs.getString(4));
                                 row.createCell((short) 4).setCellValue(rs.getString(5));
-                                row.createCell((short) 5).setCellValue(rs.getString(7));
+                                row.createCell((short) 4).setCellValue(rs.getString(6));
+                                row.createCell((short) 5).setCellValue(rs.getString(9));
                                 index++;
                             }
                         FileOutputStream fileOut = new FileOutputStream("/users/agupta/desktop/production.xls");

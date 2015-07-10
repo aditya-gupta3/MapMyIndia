@@ -16,11 +16,13 @@
 
             String Product1 = (String)request.getParameter("product1");
 
-            String abc = (String)request.getParameter("type1");
             String Uses1 = (String)request.getParameter("use1");
             String Approve1 = (String)request.getParameter("approve1");
-            String Time = (String)request.getParameter("quantity1");
-
+            String Time = (String)request.getParameter("time1");
+            System.out.print(Part1);
+            System.out.print(Product1);
+            System.out.print(Time);
+            System.out.print(Uses1);
 
             String sql = ("UPDATE Map_My_India SET Approved = ? WHERE Part = ? AND Product = ? AND Uses = ? AND TIME = ? LIMIT 1");
 //            AND Product = ? AND Type = ? AND USES = ?
@@ -58,7 +60,15 @@
 
 %>
             
-
+<!--PART
+PRODUCT
+CATEGORY
+USES
+STATUS
+QUANTITY
+APPROVED
+TIME
+FAULTY-->
  <% 
             Connection conne = null;
 
@@ -80,13 +90,32 @@
     <b> Product Name </b>
     <form name="subinventory" action="subinventory.jsp" method="POST">
     <select name="productname">
+        <option></option>
         <option>A</option>
         <option>B</option>
         <option>C</option>
         <option>D</option>
         <option>X</option> 
-        <input type="submit" value="submit" />
     </select>
+         <b> Product Category </b>
+    <select name="productcategory">
+        <option></option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option>D</option>
+        <option>X</option> 
+    </select>
+          <b> Product Use </b>
+    <select name="productuse">
+        <option></option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option>D</option>
+        <option>X</option> 
+    </select>
+        <input type="submit" value="submit" />
     </form>
 
 
@@ -96,6 +125,7 @@
                 <TH>Product</TH>
                 <TH>Type</TH>
                 <TH>Use</TH>
+                <TH>Status</TH>
                 <TH>Quantity of Product </TH>
                 <TH>Approval Status</TH>
                 <TH>Date and Time Order was Passed</TH>
@@ -110,6 +140,7 @@
                     <TD><%= resultset.getString(5) %></TD>
                     <TD><%= resultset.getString(6) %></TD>
                     <TD><%= resultset.getString(7) %></TD>
+                    <TD><%= resultset.getString(9) %></TD>
 
             </TR>
             <% } %>

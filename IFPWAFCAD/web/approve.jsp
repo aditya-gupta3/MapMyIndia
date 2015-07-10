@@ -64,6 +64,7 @@
                 <TH>Product</TH>
                 <TH>Type</TH>
                 <TH>Use</TH>
+                <TH>Status</TH>
                 <TH>Quantity of Product </TH>
                 <TH>Approval Status</TH>
                 <TH>Date and Time Order was Passed</TH>
@@ -75,9 +76,11 @@
                     <TD><input type="text" name="product1" value="<%= resultset.getString(2) %>" readonly /></TD>
                     <TD> <input type="text" name="type1" value=" <%= resultset.getString(3) %>" readonly /></TD>
                     <TD> <input type="text" name="use1" value="<%= resultset.getString(4) %>" readonly /></TD>
-                    <TD><input type="text" name="approved1" value=" <%= resultset.getString(5) %>" readonly /></TD>
-                    <TD><input type="text" name="date1" value=" <%= resultset.getString(6) %>" readonly /></TD>
-                    <TD><input type="text" name="quantity1" value=" <%= resultset.getString(7) %>" readonly /></TD>
+                    <TD><input type="text" name="status1" value=" <%= resultset.getString(5) %>" readonly /></TD>
+                    <TD><input type="text" name="quantity1" value=" <%= resultset.getString(6) %>" readonly /></TD>
+                    <TD><input type="text" name="approve1" value=" <%= resultset.getString(7) %>" readonly /></TD>
+                    <TD><input type="text" name="time1" value=" <%= resultset.getString(9) %>" readonly /></TD>
+
                     <TD><input type="submit" value="Approve" name="approving" /></TD>
                 </form>
                     <TD><form name="Reject" action="reject.jsp" method="POST">
