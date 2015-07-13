@@ -61,10 +61,10 @@
         <TABLE BORDER="1">
             <TR>
                 <TH>Part Number</TH>
-                <TH>Product</TH>
-                <TH>Type</TH>
-                <TH>Use</TH>
-                <TH>Status</TH>
+                <TH>Category</TH>
+                <TH>Model Name</TH>
+                <TH>Trade/Raw/Spare</TH>
+                <TH>Local/Import</TH>
                 <TH>Quantity of Product </TH>
                 <TH>Approval Status</TH>
                 <TH>Date and Time Order was Passed</TH>
@@ -88,9 +88,10 @@
                             <input type="hidden" name="product2" value="<%= resultset.getString(2) %>"/>
                             <input type="hidden" name="type2" value="<%= resultset.getString(3) %>"/>
                             <input type="hidden" name="use2" value="<%= resultset.getString(4) %>"/>
-                            <input type="hidden" name="status2" value="<%= resultset.getString(4) %>"/>
+                            <input type="hidden" name="status2" value="<%= resultset.getString(5) %>"/>
                             <input type="hidden" name="quantity2" value="<%= resultset.getString(6) %>"/>
-                            <input type="hidden" name="time2" value="<%= resultset.getString(6) %>"/>
+                            <input type="hidden" name="approve2" value="<%= resultset.getString(7) %>"/>
+                            <input type="hidden" name="time2" value="<%= resultset.getString(9) %>"/>
                             <input type="submit" value="Reject" name="reject" />
                         </form>
                     </TD>

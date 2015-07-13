@@ -87,45 +87,47 @@ FAULTY-->
     <h1> The Inventory is as follows: </h1>
     <br>
     <br>
-    <b> Product Name </b>
+    <center><b> Modify Your Search </b></CENTER>
+    <br>
+    <br>
     <form name="subinventory" action="subinventory.jsp" method="POST">
-    <select name="productname">
-        <option></option>
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
-        <option>D</option>
-        <option>X</option> 
-    </select>
-         <b> Product Category </b>
-    <select name="productcategory">
-        <option></option>
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
-        <option>D</option>
-        <option>X</option> 
-    </select>
-          <b> Product Use </b>
-    <select name="productuse">
-        <option></option>
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
-        <option>D</option>
-        <option>X</option> 
-    </select>
-        <input type="submit" value="submit" />
+        <CENTER><b> Part Number </b>
+        <input type="text" name="productnumber" value="" />
+         <b> Category </b>
+    <input type="text" name="productcategory" value="" />
+          <b> Model Name </b>
+    <input type="text" name="productmodel" value="" />
+         <b> Trade/Raw/Spares </b>
+         <select name="producttype">
+             <option></option>
+             <option>Trade</option>
+             <option>Raw</option>
+             <option>Spare</option>
+         </select>
+        <br>
+        <br>
+         <b> Local/Import </b>
+         <select name="productuse">
+             <option></option>
+             <option>Local</option>
+             <option>Import</option>
+         </select>
+    <b> From Date </b><input type="date" name="fromdate" value="" />
+    <b> To Date </b><input type="date" name="todate" value="" />
+    <input type="submit" value="submit" />
+        </CENTER>
+
     </form>
+    
 
 
         <TABLE BORDER="1">
             <TR>
                 <TH>Part Number</TH>
-                <TH>Product</TH>
-                <TH>Type</TH>
-                <TH>Use</TH>
-                <TH>Status</TH>
+                <TH>Category</TH>
+                <TH>Model Name</TH>
+                <TH>Trade/Raw/Spare</TH>
+                <TH>Local/Import</TH>
                 <TH>Quantity of Product </TH>
                 <TH>Approval Status</TH>
                 <TH>Date and Time Order was Passed</TH>

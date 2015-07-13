@@ -27,6 +27,7 @@ public class Mail {
     private String from;
     private String type;
     private String use;
+    private String Status;
     private String password;
     private String smtpServ;
     private String to;
@@ -122,6 +123,19 @@ public class Mail {
     public String getQuantity() {
         return quantity;
     }
+        /**
+     * @return the Status
+     */
+    public String getStatus() {
+        return Status;
+    }
+
+    /**
+     * @param Status the Status to set
+     */
+    public void setStatus(String Status) {
+        this.Status = Status;
+    }
 
     /**
      * @param quantity the quantity to set
@@ -168,7 +182,7 @@ public class Mail {
               
               msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse("bsingh@mapmyindia.com", false));
               msg.setSubject("New Order by Mr Abhinay");
-              msg.setText("Here are the details of the order" + "\n" + "The part number is " + part + "\n" + "The product number is " + product + "\n" +"The type is " + type + "\n" + "The use is " +  use + "\n" + " The Quantity is " + quantity+ ". \n");
+              msg.setText("Here are the details of the order" + "\n" + "The part number is " + part + "\n" + "The category is " + product + "\n" +"The Model Number is " + type + "\n" + "The order is " +  use + "\n" + "The order is " +  Status + "\n" +" The Quantity is " + quantity+ ". \n");
               // -- Set some other header information --
               msg.setHeader("MyMail", "Mr. XYZ" );
               msg.setSentDate(new Date());
@@ -183,6 +197,7 @@ public class Mail {
           return -1;
         }
   }
+
 
     /**
      * @return the quantity

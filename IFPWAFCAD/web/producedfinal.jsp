@@ -13,14 +13,15 @@
     String Product = (String)request.getParameter("product");
     String Type = (String)request.getParameter("type");
     String Uses = (String)request.getParameter("use");
+    String Status = (String)request.getParameter("status");
     int Quantity = Integer.parseInt((String)request.getParameter("quantity"));
     int faulty = Integer.parseInt((String)request.getParameter("faulty"));
     System.out.println(Quantity);
     
     Connection conn = null;
     String DB_URL = "jdbc:mysql://localhost:3306/MyNewDatabase";
-    String sql = "INSERT INTO Map_My_India_Final_Produced(Part, Product, Category, Uses, Quantity)"  +
-                    "VALUES ( ?,?,?,?,?)";
+    String sql = "INSERT INTO Map_My_India_Final_Produced(Part, Product, Category, Uses, Status, Quantity)"  +
+                    "VALUES ( ?,?,?,?,?,?)";
     String USER = "root";
     String PASS = "user";
     conn = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -29,7 +30,8 @@
     preparedStatement.setString(2, Product);
     preparedStatement.setString(3, Type);
     preparedStatement.setString(4, Uses);
-    preparedStatement.setInt(5, Quantity);
+    preparedStatement.setString(5, Status);
+    preparedStatement.setInt(6, Quantity);
     preparedStatement.executeUpdate(); 
 %>
 <%

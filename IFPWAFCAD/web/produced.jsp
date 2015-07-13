@@ -16,10 +16,20 @@
     
         <form action="producedfinal.jsp" method="POST">
             <p> Part Number </p><input type="text" name="part" value="" />
-            <p> Product Name </p><input type="text" name="product" value="" />
-            <p> Trade/Raw/Spares </p><input type="text" name="type" value="" />
-            <p> Local/Import </p><input type="text" name="use" value="" />
-            <p> Quantity Produced </p><input type="number" name="quantity" value="" />
+            <p> Category </p><input type="text" name="product" value="" />
+            <p> Model Name </p><input type="text" name="type" value="" />
+            <p> Type </p>
+            <select name="use">
+                    <option>Trade</option>
+                    <option>Raw</option>
+                    <option>Spare</option>
+                </select> 
+            <p> Local/Import </p>
+            <select name="status">
+                <option>Local</option>
+                <option>Import</option>
+            </select>
+            <p> Quantity </p><input type="text" name="quantity" value="" />
             <p> Faulty Quantity </p><input type="number" name="faulty" value="" />
             <br>
             <br>
