@@ -22,7 +22,8 @@
     </HEAD>
 
     <BODY>
-        <H1> Pending Order's for Approval </H1>
+    <center>
+        <H1> Pending Orders for Approval </H1>
 
         <% 
 
@@ -30,19 +31,11 @@
 
 
             String Part = (String)request.getParameter("part");
-
             String Product = (String)request.getParameter("product");
-
-
             String Type = (String)request.getParameter("type");
-            String Uses = (String)request.getParameter("use");
-
-
-
-
+            String Uses = (String)request.getParameter("use");          
             Connection conn = null;
             String DB_URL = "jdbc:mysql://localhost:3306/MapMyIndiadb";
-
             String USER = "root";
             String PASS = "";
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -97,6 +90,7 @@
             </TR>
             <% } %>
         </TABLE>
+    </center>
     </BODY>
 </HTML>
 

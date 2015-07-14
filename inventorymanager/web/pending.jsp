@@ -27,7 +27,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
+    <center>
         <TABLE BORDER="1">
             <TR>
                 <TH>Part Number</TH>
@@ -55,6 +55,8 @@
                 </form>
             </TR>
                <% } %>
+        </table>
+    </center>
     </body>
 </html>
 <% conn.close(); %>

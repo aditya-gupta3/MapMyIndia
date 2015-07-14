@@ -103,14 +103,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>JSP Page</title>
+    <center>
+    <h1>The requested order is as follows </h1>
     <body>
         <br>
         <br>
-        <TABLE BORDER="1">
+        <Table BORDER="1">
             <TR>
                 <TH>Part Number</TH>
                 <TH>Product</TH>
@@ -129,4 +129,7 @@
                 <TD><%= quantity_left%></TD>
                 <TD><%= total_before%></TD>
                 <TD><%= faulty%></TD>
+            </TR>
+        </Table>
+    </center>
 </html>
